@@ -31,11 +31,16 @@ public class App extends Application {
         pt.setNode(rectangle);
 
         pt.play();
-        
+
+        Button button = new Button("Play");
+        button.setOnAction(e->{
+            pt.play();
+        });
+
         stage.setTitle("Java Chart Animation");
 
         Pane root = new Pane();
-        root.getChildren().addAll(circle, rectangle);
+        root.getChildren().addAll(circle, rectangle, button);
 
         stage.setScene(new Scene(root, 600, 600));
         stage.show();
